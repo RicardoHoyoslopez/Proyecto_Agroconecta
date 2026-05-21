@@ -1,5 +1,5 @@
 from ast import If
-
+#aqui importamos las librerias.
 from flask import Flask, request, jsonify
 import mysql.connector
 import requests
