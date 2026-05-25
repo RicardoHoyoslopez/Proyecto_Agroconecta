@@ -1,5 +1,5 @@
 # AgroConecta - Mini Módulo de Autenticación
-## Descripción
+## Descripción 
 El mini módulo de autenticación de AgroConecta fue desarrollado con el objetivo de gestionar el registro e inicio de sesión de usuarios dentro de la plataforma. Durante el proyecto se implementó una arquitectura basada en frontend y backend desacoplados, utilizando React + Vite para la interfaz gráfica, Flask para el desarrollo de la API REST y MySQL para la persistencia de datos.  
 
 Además, se utilizaron tecnologías modernas como Docker y Docker Compose para la contenerización y orquestación de servicios, permitiendo una ejecución más organizada y escalable del sistema. También se realizaron pruebas funcionales mediante Postman y se utilizó GitHub para el control de versiones y trabajo colaborativo del proyecto.
