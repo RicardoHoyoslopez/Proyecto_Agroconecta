@@ -99,22 +99,24 @@ def register_user():
     correo_usuario = data.get("correo_usuario")
     telefono_usuario = data.get("telefono_usuario")
     direccion_usuario = data.get("direccion_usuario")
+    cantidad_animales = data.get("cantidad_animales")
     Connection = get_db_connection()
     cursor = Connection.cursor()
 
     try:
         cursor.execute(
-            "INSERT INTO usuarios (nombre_usuario, password_usuario,correo_usuario, telefono_usuario,direccion_usuario) VALUES (%s, %s, %s, %s,%s)",
+            "INSERT INTO usuarios (nombre_usuario, password_usuario,correo_usuario, telefono_usuario,direccion_usuario, cantidad_animales) VALUES (%s, %s, %s, %s,%s, %s)",
             (
                 nombre_usuario,
                 password_usuario,
                 correo_usuario,
                 telefono_usuario,
                 direccion_usuario,
+                cantidad_animales,
             ),
         )
         Connection.commit()
-        return {"Exitoso": "Usuario registrado exitosamente"}
+        return {"Exitoso": "Usuario registrado exitosamente"}, 201
     except Exception as e:
         return {"Error": str(e)}, 400
     finally:

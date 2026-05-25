@@ -1,6 +1,3 @@
-# FROM nginx:latest
-# COPY /sitio /usr/share/nginx/html
-
 
 FROM python:3.9
 

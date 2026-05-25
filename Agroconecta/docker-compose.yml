@@ -1,11 +1,16 @@
 services:
 
-
-
-      
+  frontend:
+    build: ./frontend
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - autenticacion
 
   # SERVICIO AUTENTICACION
-
   autenticacion:
     build: ./Servicio-autenticacion
     ports:
@@ -15,6 +20,7 @@ services:
     env_file:
       - .env
 
+  # BASE DE DATOS
   db_autenticacion:
     image: mysql:8.0
     environment:
@@ -25,12 +31,5 @@ services:
     volumes:
       - db_auth_data:/var/lib/mysql
 
-
-
-  
-
-
 volumes:
   db_auth_data:
-
-
