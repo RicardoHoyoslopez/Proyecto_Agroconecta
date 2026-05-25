@@ -45,22 +45,31 @@ function DashboardVeterinario() {
 
   return (
 
-    <div className="min-h-screen bg-gray-100 flex">
+    <div className="min-h-screen bg-gradient-to-br from-gray-100 via-green-50 to-gray-100 flex overflow-hidden">
+
+      {/* EFECTOS DE FONDO */}
+      <div className="fixed top-0 left-0 w-72 h-72 bg-green-300 opacity-20 blur-3xl rounded-full animate-pulse"></div>
+
+      <div className="fixed bottom-0 right-0 w-96 h-96 bg-green-200 opacity-20 blur-3xl rounded-full animate-pulse"></div>
 
       {/* SIDEBAR */}
-      <div className="w-[280px] bg-gradient-to-b from-green-800 to-green-600 text-white shadow-2xl p-8 hidden lg:flex flex-col justify-between">
+      <div className="w-[280px] bg-gradient-to-b from-green-800 to-green-600 text-white shadow-2xl p-8 hidden lg:flex flex-col justify-between border-r border-white/10 backdrop-blur-lg animate-[fadeInLeft_0.8s_ease]">
 
         <div>
 
           {/* LOGO */}
           <div className="mb-14">
 
-            <h1 className="text-4x1 font-extrabold">
+            <h1 className="text-4xl font-extrabold tracking-wide drop-shadow-lg">
+
               AgroConecta 🌱
+
             </h1>
 
-            <p className="text-green-100 mt-3">
+            <p className="text-green-100 mt-3 text-lg">
+
               Panel Veterinario
+
             </p>
 
           </div>
@@ -68,33 +77,33 @@ function DashboardVeterinario() {
           {/* MENU */}
           <div className="space-y-4">
 
-            <button className="w-full bg-white/20 hover:bg-white/30 transition duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
+            <button className="w-full bg-white/20 hover:bg-white/30 hover:scale-[1.03] active:scale-95 transition-all duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg shadow-lg hover:shadow-green-400/30">
 
-              <FaClipboardList />
+              <FaClipboardList className="text-xl" />
 
               Consultas
 
             </button>
 
-            <button className="w-full hover:bg-white/20 transition duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
+            <button className="w-full hover:bg-white/20 hover:scale-[1.03] active:scale-95 transition-all duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
 
-              <FaVideo />
+              <FaVideo className="text-xl" />
 
               Teleconsultas
 
             </button>
 
-            <button className="w-full hover:bg-white/20 transition duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
+            <button className="w-full hover:bg-white/20 hover:scale-[1.03] active:scale-95 transition-all duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
 
-              <FaNotesMedical />
+              <FaNotesMedical className="text-xl" />
 
               Historial clínico
 
             </button>
 
-            <button className="w-full hover:bg-white/20 transition duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
+            <button className="w-full hover:bg-white/20 hover:scale-[1.03] active:scale-95 transition-all duration-300 rounded-2xl p-4 flex items-center gap-4 text-lg">
 
-              <FaBell />
+              <FaBell className="text-xl" />
 
               Alertas
 
@@ -107,7 +116,7 @@ function DashboardVeterinario() {
         {/* BOTON */}
         <button
           onClick={cerrarSesion}
-          className="bg-white text-green-700 font-bold py-4 rounded-2xl hover:scale-105 transition duration-300 flex items-center justify-center gap-3 shadow-xl"
+          className="bg-white text-green-700 font-bold py-4 rounded-2xl hover:scale-105 active:scale-95 transition-all duration-300 flex items-center justify-center gap-3 shadow-2xl hover:shadow-green-300/50"
         >
 
           <FaSignOutAlt />
@@ -122,7 +131,7 @@ function DashboardVeterinario() {
       <div className="flex-1 overflow-y-auto">
 
         {/* HEADER */}
-        <div className="bg-white shadow-md px-10 py-8 flex justify-between items-center">
+        <div className="bg-white/80 backdrop-blur-lg shadow-md px-10 py-8 flex justify-between items-center border-b border-gray-200 animate-[fadeInDown_0.8s_ease]">
 
           <div>
 
@@ -155,7 +164,7 @@ function DashboardVeterinario() {
 
             </div>
 
-            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-600 to-green-400 flex items-center justify-center text-white text-2xl font-bold shadow-xl">
+            <div className="w-16 h-16 rounded-full bg-gradient-to-r from-green-600 to-green-400 flex items-center justify-center text-white text-2xl font-bold shadow-2xl hover:rotate-6 transition duration-300">
 
               {usuario?.nombre?.charAt(0)}
 
@@ -172,7 +181,7 @@ function DashboardVeterinario() {
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
 
             {/* CARD */}
-            <div className="bg-white p-7 rounded-3xl shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+            <div className="bg-white/80 backdrop-blur-lg p-7 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-white/40 animate-[fadeInUp_0.7s_ease]">
 
               <div className="flex justify-between items-center">
 
@@ -188,9 +197,9 @@ function DashboardVeterinario() {
 
                 </div>
 
-                <div className="bg-blue-100 p-5 rounded-2xl">
+                <div className="bg-blue-100 p-5 rounded-2xl shadow-inner">
 
-                  <FaCalendarCheck className="text-4xl text-blue-500" />
+                  <FaCalendarCheck className="text-4xl text-blue-500 animate-pulse" />
 
                 </div>
 
@@ -199,7 +208,7 @@ function DashboardVeterinario() {
             </div>
 
             {/* CARD */}
-            <div className="bg-white p-7 rounded-3xl shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+            <div className="bg-white/80 backdrop-blur-lg p-7 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-white/40 animate-[fadeInUp_0.8s_ease]">
 
               <div className="flex justify-between items-center">
 
@@ -215,7 +224,7 @@ function DashboardVeterinario() {
 
                 </div>
 
-                <div className="bg-green-100 p-5 rounded-2xl">
+                <div className="bg-green-100 p-5 rounded-2xl shadow-inner">
 
                   <FaUserFriends className="text-4xl text-green-600" />
 
@@ -226,7 +235,7 @@ function DashboardVeterinario() {
             </div>
 
             {/* CARD */}
-            <div className="bg-white p-7 rounded-3xl shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+            <div className="bg-white/80 backdrop-blur-lg p-7 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-white/40 animate-[fadeInUp_0.9s_ease]">
 
               <div className="flex justify-between items-center">
 
@@ -242,9 +251,9 @@ function DashboardVeterinario() {
 
                 </div>
 
-                <div className="bg-red-100 p-5 rounded-2xl">
+                <div className="bg-red-100 p-5 rounded-2xl shadow-inner">
 
-                  <FaNotesMedical className="text-4xl text-red-500" />
+                  <FaNotesMedical className="text-4xl text-red-500 animate-pulse" />
 
                 </div>
 
@@ -253,7 +262,7 @@ function DashboardVeterinario() {
             </div>
 
             {/* CARD */}
-            <div className="bg-white p-7 rounded-3xl shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2">
+            <div className="bg-white/80 backdrop-blur-lg p-7 rounded-3xl shadow-md hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 hover:scale-[1.02] border border-white/40 animate-[fadeInUp_1s_ease]">
 
               <div className="flex justify-between items-center">
 
@@ -269,7 +278,7 @@ function DashboardVeterinario() {
 
                 </div>
 
-                <div className="bg-yellow-100 p-5 rounded-2xl">
+                <div className="bg-yellow-100 p-5 rounded-2xl shadow-inner">
 
                   <FaVideo className="text-4xl text-yellow-500" />
 
@@ -285,7 +294,7 @@ function DashboardVeterinario() {
           <div className="grid grid-cols-1 xl:grid-cols-3 gap-8 mt-10">
 
             {/* CONSULTAS */}
-            <div className="xl:col-span-2 bg-white rounded-3xl shadow-md p-8">
+            <div className="xl:col-span-2 bg-white/80 backdrop-blur-lg rounded-3xl shadow-md p-8 border border-white/40 animate-[fadeInLeft_1s_ease]">
 
               <div className="flex justify-between items-center mb-8">
 
@@ -295,7 +304,7 @@ function DashboardVeterinario() {
 
                 </h2>
 
-                <button className="bg-green-600 hover:bg-green-700 transition px-5 py-3 rounded-2xl text-white font-bold shadow-lg">
+                <button className="bg-green-600 hover:bg-green-700 hover:scale-105 active:scale-95 transition-all duration-300 px-5 py-3 rounded-2xl text-white font-bold shadow-xl hover:shadow-green-400/40">
 
                   Ver todas
 
@@ -306,7 +315,7 @@ function DashboardVeterinario() {
               <div className="space-y-5">
 
                 {/* ITEM */}
-                <div className="bg-gray-50 hover:bg-green-50 transition duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100">
+                <div className="bg-gray-50 hover:bg-green-50 hover:scale-[1.01] transition-all duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100 hover:shadow-lg">
 
                   <div>
 
@@ -320,7 +329,7 @@ function DashboardVeterinario() {
 
                   </div>
 
-                  <span className="bg-red-100 text-red-600 px-4 py-2 rounded-xl font-bold">
+                  <span className="bg-red-100 text-red-600 px-4 py-2 rounded-xl font-bold animate-pulse">
 
                     Urgente
 
@@ -329,7 +338,7 @@ function DashboardVeterinario() {
                 </div>
 
                 {/* ITEM */}
-                <div className="bg-gray-50 hover:bg-green-50 transition duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100">
+                <div className="bg-gray-50 hover:bg-green-50 hover:scale-[1.01] transition-all duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100 hover:shadow-lg">
 
                   <div>
 
@@ -352,7 +361,7 @@ function DashboardVeterinario() {
                 </div>
 
                 {/* ITEM */}
-                <div className="bg-gray-50 hover:bg-green-50 transition duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100">
+                <div className="bg-gray-50 hover:bg-green-50 hover:scale-[1.01] transition-all duration-300 p-6 rounded-2xl flex justify-between items-center border border-gray-100 hover:shadow-lg">
 
                   <div>
 
@@ -379,7 +388,7 @@ function DashboardVeterinario() {
             </div>
 
             {/* ALERTAS */}
-            <div className="bg-white rounded-3xl shadow-md p-8">
+            <div className="bg-white/80 backdrop-blur-lg rounded-3xl shadow-md p-8 border border-white/40 animate-[fadeInRight_1s_ease]">
 
               <h2 className="text-3xl font-bold text-gray-800 mb-8">
 
@@ -389,19 +398,19 @@ function DashboardVeterinario() {
 
               <div className="space-y-5">
 
-                <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-2xl">
+                <div className="bg-red-50 border-l-4 border-red-500 p-5 rounded-2xl hover:scale-[1.02] transition duration-300 shadow-sm hover:shadow-md">
 
                   🚨 Caso crítico reportado en bovino
 
                 </div>
 
-                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-2xl">
+                <div className="bg-yellow-50 border-l-4 border-yellow-500 p-5 rounded-2xl hover:scale-[1.02] transition duration-300 shadow-sm hover:shadow-md">
 
                   📅 Consulta programada para mañana
 
                 </div>
 
-                <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-2xl">
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-5 rounded-2xl hover:scale-[1.02] transition duration-300 shadow-sm hover:shadow-md">
 
                   📡 Nueva teleconsulta recibida
 
@@ -416,6 +425,55 @@ function DashboardVeterinario() {
         </div>
 
       </div>
+
+      {/* ANIMACIONES PERSONALIZADAS */}
+      <style>
+        {`
+          @keyframes fadeInUp {
+            from {
+              opacity: 0;
+              transform: translateY(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+
+          @keyframes fadeInLeft {
+            from {
+              opacity: 0;
+              transform: translateX(-40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes fadeInRight {
+            from {
+              opacity: 0;
+              transform: translateX(40px);
+            }
+            to {
+              opacity: 1;
+              transform: translateX(0);
+            }
+          }
+
+          @keyframes fadeInDown {
+            from {
+              opacity: 0;
+              transform: translateY(-30px);
+            }
+            to {
+              opacity: 1;
+              transform: translateY(0);
+            }
+          }
+        `}
+      </style>
 
     </div>
 
